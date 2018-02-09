@@ -16,7 +16,6 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'mxw/vim-jsx'
 Plugin 'mattn/webapi-vim'
-Plugin 'Yggdroot/indentLine'
 
 " All of your Plugins must be added before the following line
 call vundle#end()
@@ -58,11 +57,6 @@ set hlsearch
 set expandtab
 set tabstop=2
 set shiftwidth=2
-"end
-
-"indentLine
-let g:indentLine_char = '⋮'
-map <C-i> :IndentLinesToggle<CR>
 "end
 
 if bufwinnr(1)
