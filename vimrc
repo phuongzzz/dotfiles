@@ -59,11 +59,6 @@ set tabstop=2
 set shiftwidth=2
 "end
 
-"surround
-let b:surround_{char2nr('=')} = "<%= \r %>"
-let b:surround_{char2nr('-')} = "<% \r %>"
-"end
-
 if bufwinnr(1)
       map + <C-W>+
       map - <C-W>-
