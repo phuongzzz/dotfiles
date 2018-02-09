@@ -15,6 +15,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'kien/ctrlp.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'mxw/vim-jsx'
+Plugin 'mattn/webapi-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()
@@ -38,6 +39,7 @@ map <C-n> :NERDTreeToggle<CR>
 
 "emmet settings"
 imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+let g:user_emmet_settings = webapi#json#decode(join(readfile(expand('~/.phuong_snip.json')), "\n"))
 "end
 
 "jsx settings
@@ -55,6 +57,11 @@ set hlsearch
 set expandtab
 set tabstop=2
 set shiftwidth=2
+"end
+
+"surround
+let b:surround_{char2nr('=')} = "<%= \r %>"
+let b:surround_{char2nr('-')} = "<% \r %>"
 "end
 
 if bufwinnr(1)
