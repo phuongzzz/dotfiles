@@ -41,13 +41,8 @@ let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
 "emmet settings"
 imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
-let g:user_emmet_settings = webapi#json#decode(join(readfile(expand('~/.phuong_snip.json')), "\n"))
 autocmd FileType html, css, jsx EmmetInstall
-let g:user_emmet_settings = {
-\  'javascript.jsx' : {
-\      'extends' : 'jsx',
-\  },
-\}
+let g:user_emmet_settings = webapi#json#decode(join(readfile(expand('~/.phuong_custom.json')), "\n"))
 "end
 
 "jsx settings
