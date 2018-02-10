@@ -70,11 +70,10 @@ if bufwinnr(1)
 endif
 
 set omnifunc=syntaxcomplete#Complete
-set foldmethod=syntax
+set foldmethod=manual
 filetype plugin indent on 
 syntax on
 
 "misc
 autocmd VimEnter * echo '>^.^<'
 "end
-
