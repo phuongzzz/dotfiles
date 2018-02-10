@@ -13,8 +13,9 @@ Plugin 'slim-template/vim-slim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
 Plugin 'kien/ctrlp.vim'
-Plugin 'mattn/emmet-vim'
 Plugin 'mxw/vim-jsx'
+Plugin 'mattn/emmet-vim'
+Plugin 'pangloss/vim-javascript'
 Plugin 'mattn/webapi-vim'
 
 " All of your Plugins must be added before the following line
@@ -35,11 +36,18 @@ let g:airline_theme='wombat'
 
 "nerdtree settings
 map <C-n> :NERDTreeToggle<CR>
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 "end
 
 "emmet settings"
 imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 let g:user_emmet_settings = webapi#json#decode(join(readfile(expand('~/.phuong_snip.json')), "\n"))
+autocmd FileType html, css, jsx EmmetInstall
+let g:user_emmet_settings = {
+\  'javascript.jsx' : {
+\      'extends' : 'jsx',
+\  },
+\}
 "end
 
 "jsx settings
