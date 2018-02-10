@@ -22,21 +22,21 @@ Plugin 'mattn/webapi-vim'
 call vundle#end()
 
 "material theme configuration
-let g:enable_bold_font = 1
-let g:enable_italic_font = 1
+let g:enable_bold_font=1
+let g:enable_italic_font=1
 set background=dark
 colorscheme hybrid_material
 "end
 
 "vim airline configuration"
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts=1
+let g:airline#extensions#tabline#enabled=1
 let g:airline_theme='wombat'
 "end
 
 "nerdtree settings
 map <C-n> :NERDTreeToggle<CR>
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+let g:ctrlp_custom_ignore='node_modules\|DS_Store\|git'
 "end
 
 "emmet settings"
@@ -63,10 +63,10 @@ set shiftwidth=2
 "end
 
 if bufwinnr(1)
-      map + <C-W>+
-      map - <C-W>-
-      map < <C-W><
-      map > <C-W>>
+  map + <C-W>+
+  map - <C-W>-
+  map < <C-W><
+  map > <C-W>>
 endif
 
 set omnifunc=syntaxcomplete#Complete
