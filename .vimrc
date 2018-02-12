@@ -71,9 +71,12 @@ endif
 
 set omnifunc=syntaxcomplete#Complete
 set foldmethod=manual
-filetype plugin indent on 
+filetype plugin indent on
 syntax on
 
 "misc
 autocmd VimEnter * echo '>^.^<'
+
+" trim trailing whitespaces
+nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 "end
