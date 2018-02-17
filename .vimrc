@@ -24,9 +24,9 @@ Plugin 'drewtempelmeyer/palenight.vim'
 call vundle#end()
 
 "material theme configuration
-let g:enable_bold_font=1
-let g:enable_italic_font=1
-set background=dark
+"let g:enable_bold_font=1
+"let g:enable_italic_font=1
+"set background=dark
 "colorscheme hybrid_material
 "end
 
@@ -39,6 +39,9 @@ let g:airline_theme='zenburn'
 "nerdtree settings
 map <C-n> :NERDTreeToggle<CR>
 let g:ctrlp_custom_ignore='node_modules\|DS_Store\|git'
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+let g:NERDTreeDirArrowExpandable = '⇢'
+let g:NERDTreeDirArrowCollapsible = '⇣'
 "end
 
 "emmet settings"
@@ -75,6 +78,10 @@ set omnifunc=syntaxcomplete#Complete
 set foldmethod=manual
 filetype plugin indent on
 syntax on
+set cursorline
+set nobackup
+set nowritebackup
+set noswapfile
 
 "misc
 autocmd VimEnter * echo '>^.^<'
