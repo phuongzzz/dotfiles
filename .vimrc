@@ -38,10 +38,15 @@ let g:airline_theme='zenburn'
 
 "nerdtree settings
 map <C-n> :NERDTreeToggle<CR>
-let g:ctrlp_custom_ignore='node_modules\|DS_Store\|git'
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let g:NERDTreeDirArrowExpandable = '⇢'
 let g:NERDTreeDirArrowCollapsible = '⇣'
+let g:NERDTreeMouseMode = 3
+"end
+
+"ctrlp
+let g:ctrlp_custom_ignore='node_modules\|DS_Store\|git'
+let g:ctrlp_working_path_mode = 'ra'
 "end
 
 "emmet settings"
@@ -82,6 +87,7 @@ set cursorline
 set nobackup
 set nowritebackup
 set noswapfile
+set mouse=a
 
 "misc
 autocmd VimEnter * echo '>^.^<'
