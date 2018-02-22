@@ -124,3 +124,18 @@ endif
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 nnoremap F :Ag<SPACE>
 command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+
+"startify
+let g:startify_list_order = [
+  \ ['   Most recently used files in the current directory:'],
+  \ 'dir',
+  \ ['   Most recently used files'],
+  \ 'files',
+  \ ['   Sessions:'],
+  \ 'sessions',
+  \ ['   Bookmarks:'],
+  \ 'bookmarks',
+  \ ['   Commands:'],
+  \ 'commands',
+  \ ]
+"end
