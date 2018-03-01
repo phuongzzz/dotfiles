@@ -79,7 +79,7 @@ let g:ctrlp_cmd = 'CtrlPMRU'
 
 "emmet settings"
 imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
-autocmd FileType html, css, jsx EmmetInstall
+autocmd FileType html,css,jsx EmmetInstall
 let g:user_emmet_settings = webapi#json#decode(join(readfile(expand('~/.phuong_custom.json')), "\n"))
 "end
 
