@@ -17,12 +17,12 @@ Plugin 'mxw/vim-jsx'
 Plugin 'mattn/emmet-vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mattn/webapi-vim'
-Plugin 'drewtempelmeyer/palenight.vim'
 Plugin 'mhinz/vim-startify'
 Plugin 'gregsexton/matchtag'
 Plugin 'ayu-theme/ayu-vim'
 Plugin 'keith/swift.vim'
 Plugin 'Yggdroot/indentLine'
+Plugin 'phuongzzz/palenight.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()
