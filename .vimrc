@@ -155,6 +155,11 @@ let g:startify_list_order = [
   \ ]
 "end
 
+"indentLine
+let g:indentLine_char = '⋮'
+map <C-i> :IndentLinesToggle<CR>
+"end
+
 "Buffer
 
 "close all buffer
