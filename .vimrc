@@ -23,6 +23,7 @@ Plugin 'ayu-theme/ayu-vim'
 Plugin 'keith/swift.vim'
 Plugin 'Yggdroot/indentLine'
 Plugin 'phuongzzz/palenight.vim'
+Plugin 'phuongzzz/vim-gitgutter'
 
 " All of your Plugins must be added before the following line
 call vundle#end()
@@ -76,7 +77,7 @@ let g:NERDTreeMouseMode = 3
 let g:ctrlp_custom_ignore='node_modules\|DS_Store\|git'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlPMRU'
+let g:ctrlp_cmd = 'CtrlPMixed'
 "end
 
 "emmet settings"
@@ -156,10 +157,17 @@ let g:startify_list_order = [
 "end
 
 "indentLine
-let g:indentLine_char = '¦'
+let g:indentLine_char = '|'
 map <C-i> :IndentLinesToggle<CR>
 let g:indentLine_enabled = 0
 "end
+
+
+"git gutter
+""let g:gitgutter_highlight_lines = 1
+set updatetime=1000
+"end
+
 
 "Buffer
 
