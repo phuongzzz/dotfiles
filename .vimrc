@@ -162,15 +162,12 @@ map <C-i> :IndentLinesToggle<CR>
 let g:indentLine_enabled = 0
 "end
 
-
 "git gutter
 ""let g:gitgutter_highlight_lines = 1
 set updatetime=1000
 "end
 
-
 "Buffer
-
 "close all buffer
 "end
 
@@ -216,4 +213,3 @@ function QuoteDelim(char)
  endif
 endf
 "end
-
