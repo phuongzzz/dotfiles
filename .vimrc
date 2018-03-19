@@ -23,6 +23,7 @@ Plugin 'ayu-theme/ayu-vim'
 Plugin 'keith/swift.vim'
 Plugin 'Yggdroot/indentLine'
 Plugin 'phuongzzz/palenight.vim'
+Plugin 'phuongzzz/vim-gitgutter'
 
 " All of your Plugins must be added before the following line
 call vundle#end()
@@ -76,7 +77,7 @@ let g:NERDTreeMouseMode = 3
 let g:ctrlp_custom_ignore='node_modules\|DS_Store\|git'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlPMRU'
+let g:ctrlp_cmd = 'CtrlPMixed'
 "end
 
 "emmet settings"
@@ -142,25 +143,73 @@ command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 
 "startify
 let g:startify_list_order = [
-  \ ['   Most recently used files in the current directory:'],
-  \ 'dir',
-  \ ['   Most recently used files'],
-  \ 'files',
-  \ ['   Sessions:'],
-  \ 'sessions',
-  \ ['   Bookmarks:'],
-  \ 'bookmarks',
-  \ ['   Commands:'],
-  \ 'commands',
-  \ ]
+      \ ['   Most recently used files in the current directory:'],
+      \ 'dir',
+      \ ['   Most recently used files'],
+      \ 'files',
+      \ ['   Sessions:'],
+      \ 'sessions',
+      \ ['   Bookmarks:'],
+      \ 'bookmarks',
+      \ ['   Commands:'],
+      \ 'commands',
+      \ ]
 "end
 
 "indentLine
-let g:indentLine_char = '⋮'
+let g:indentLine_char = '|'
 map <C-i> :IndentLinesToggle<CR>
+let g:indentLine_enabled = 0
+"end
+
+"git gutter
+""let g:gitgutter_highlight_lines = 1
+set updatetime=1000
 "end
 
 "Buffer
-
 "close all buffer
+"end
+
+"auto complete parenthes
+inoremap ( ()<Esc>i
+inoremap [ []<Esc>i
+inoremap { {<CR>}<Esc>O
+autocmd Syntax html,vim inoremap < <lt>><Esc>i| inoremap > <c-r>=ClosePair('>')<CR>
+inoremap ) <c-r>=ClosePair(')')<CR>
+inoremap ] <c-r>=ClosePair(']')<CR>
+inoremap } <c-r>=CloseBracket()<CR>
+inoremap " <c-r>=QuoteDelim('"')<CR>
+inoremap ' <c-r>=QuoteDelim("'")<CR>
+
+function ClosePair(char)
+ if getline('.')[col('.') - 1] == a:char
+ return "\<Right>"
+ else
+ return a:char
+ endif
+endf
+
+function CloseBracket()
+ if match(getline(line('.') + 1), '\s*}') < 0
+ return "\<CR>}"
+ else
+ return "\<Esc>j0f}a"
+ endif
+endf
+
+function QuoteDelim(char)
+ let line = getline('.')
+ let col = col('.')
+ if line[col - 2] == "\\"
+ "Inserting a quoted quotation mark into the string
+ return a:char
+ elseif line[col - 1] == a:char
+ "Escaping out of the string
+ return "\<Right>"
+ else
+ "Starting a string
+ return a:char.a:char."\<Esc>i"
+ endif
+endf
 "end
